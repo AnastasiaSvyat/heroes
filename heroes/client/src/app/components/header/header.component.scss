@@ -1,0 +1,26 @@
+.header-container {
+    height: 60px;
+    background-color: rgb(205, 242, 253);
+
+    .header-container_leftBox, .header-container_rightBox {
+        margin-left: 20px;
+
+        img, button {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        button {
+            height: 45px;
+            width: 45px;
+            background-color: rgb(227, 165, 246);
+        }
+    }
+
+    .header-container_title{
+        font-weight: 100;
+        margin-top: 15px;
+        color: rgb(9, 95, 138);
+    }
+}

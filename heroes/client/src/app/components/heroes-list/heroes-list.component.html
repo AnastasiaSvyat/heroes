@@ -1,0 +1,46 @@
+<div class="heroes-list-container" fxLayoutAlign="center center" fxLayout="column">
+
+
+    <div class="w100 mt20" *ngIf="loading$ | async" fxLayoutAlign="center center">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <div class="w100 mt20" *ngIf="!(loading$ | async) && !(heroes$ | async)?.length" fxLayoutAlign="center center">
+        While there are no heroes...
+    </div>
+
+
+    <div class="container" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+
+        <div class="continentItem mt20" fxLayoutAlign="space-around center" fxLayout="column" fxFlex="26"
+            *ngFor="let hero of heroes$ | async">
+
+            <div class="w100" fxLayout="row" fxLayoutAlign="end center">
+                <button mat-icon-button color="primary" (click)="updateHero(hero)">
+                    <mat-icon class="material-icons">edit</mat-icon>
+                </button>
+
+                <button mat-icon-button color="warn" (click)="deleteHero(hero.id)">
+                    <mat-icon class="material-icons">delete</mat-icon>
+                </button>
+            </div>
+
+            <div class="container-img" *ngIf="hero?.image">
+                <img [src]="hero?.image" alt="img">
+            </div>
+
+            <span class="fw100">
+                {{hero.nickname}}
+            </span>
+
+            <span class="nickname">
+                {{hero.real_name}}
+            </span>
+
+            <span>
+                {{hero.catch_phrase}}
+            </span>
+
+        </div>
+    </div>
+</div>

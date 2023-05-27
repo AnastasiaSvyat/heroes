@@ -1,0 +1,54 @@
+.hero-container {
+
+    .hero-container_closeBox {
+        margin-top: 8px;
+
+        mat-icon {
+            color: rgb(9, 95, 138);
+            cursor: pointer;
+        }
+    }
+
+    mat-form-field {
+        width: 100%;
+        margin-top: 7px;
+        border-radius: 10px;
+        color: white;
+    }
+
+    .w48{
+        width: 48%;
+    }
+
+    .applyBtn {
+        background-color: rgb(9, 95, 138);
+        color: white;
+        width: 120px;
+        height: 48px;
+    }
+}
+
+
+.photoBox {
+    width: 90px;
+    height: 90px;
+    background-color: rgb(227, 165, 246);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    img {
+        width: 93px;
+        height: 93px;
+        border-radius: 50%;
+        margin-top: 2px;
+    }
+}
+
+.file-input {
+    display: none;
+}
+

@@ -1,0 +1,72 @@
+<div class="hero-container">
+    <div class="w100 hero-container_closeBox" fxLayoutAlign="end start">
+        <mat-icon fxFlex="5" (click)="close()">close</mat-icon>
+    </div>
+    <h2 mat-dialog-title>{{data.head}}</h2>
+
+    <form class="formContainer" [formGroup]="heroForm" mat-dialog-content>
+
+        <div class="w100" fxLayout="column" fxLayoutAlign="center center">
+            <div class="photoBox">
+                <div class="updatePhoto greyColor">
+                    <div (click)="photoUpload.click()">
+                        <input name="file" id="url" type="file" class="file-input" (change)="onPhotoSelected($event)"
+                            #photoUpload>
+                        <span *ngIf="!imageData">add image</span>
+                        <img *ngIf="imageData" class="photoBoxImg" [src]="imageData" alt="image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="w100 mt7">
+            <mat-form-field class="w48" appearance="outline" floatLabel="always">
+                <mat-label>Nickname</mat-label>
+                <input type="text" placeholder="Enter nickname..." formControlName="nickname" name="name" matInput />
+                <mat-error class="helper-text red-text">
+                    <span *ngIf="nickname?.errors?.['required']">Nickname name is required.</span>
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field class="w48" appearance="outline" floatLabel="always">
+                <mat-label>Real name</mat-label>
+                <input type="text" placeholder="Enter real name..." formControlName="real_name" name="name" matInput />
+                <mat-error class="helper-text red-text">
+                    <span *ngIf="real_name?.errors?.['required']">Real name name is required.</span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+       
+
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Superpowers</mat-label>
+            <input type="text" placeholder="Enter superpowers..." formControlName="superpowers" name="name" matInput />
+            <mat-error class="helper-text red-text">
+                <span *ngIf="superpowers?.errors?.['required']">Superpowers name name is required.</span>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Origin description</mat-label>
+            <input type="text" placeholder="Enter origin description..." formControlName="origin_description"
+                name="name" matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Catch phrase</mat-label>
+            <input type="text" placeholder="Enter origin catch phrase..." formControlName="catch_phrase" name="name"
+                matInput />
+        </mat-form-field>
+
+    </form>
+
+    <div fxLayout="row" fxLayoutAlign="center center" class="mt20">
+        <button (click)='apply(heroForm)' class="applyBtn" fxLayoutAlign="center center" mat-stroked-button>SAVE
+        </button>
+    </div>
+    <!--     
+    <div *ngIf='loading' fxLayoutAlign="center " class="w100 h100vh mt7">
+        <mat-spinner></mat-spinner>
+    </div> -->
+</div>

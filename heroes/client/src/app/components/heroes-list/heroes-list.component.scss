@@ -1,0 +1,34 @@
+.container {
+    width: 80%;
+
+    .container-img img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+
+    .continentItem {
+        height: 230px;
+        border: 1px solid rgb(184, 225, 242);
+        box-shadow: 0 0 7px rgb(6, 87, 99);
+        border-radius: 10px;
+        text-align: center;
+
+        span {
+            font-size: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .nickname {
+            color: rgb(173, 173, 173);
+        }
+
+    }
+
+    .continentItem:hover {
+        background-color: rgb(238, 253, 255);
+        cursor: pointer;
+        transform: scale(1.08);
+        transition: transform 0.5s;
+    }
+}
